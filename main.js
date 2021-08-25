@@ -1,5 +1,14 @@
-function random () {
-    return Math.floor(Math.random() * 100);
+function startGame () {
+    function random () {
+        return Math.floor(Math.random() * 100);
+    }
+    return random();
 }
 
-console.log(random());
+console.log(startGame());
+
+
+
+for(let i = 0; i <= 10; i++){
+    console.log(i);
+}
