@@ -11,10 +11,13 @@ console.log(startGame());
  * Check input field
  */
 
+// create empty array for numbers
+const numberArray = [];
 
 document.querySelector('.btn-ckeck').addEventListener('click', () => {
     const numberInput = document.querySelector('#number').value;
-    document.querySelector('.numberChecked').innerHTML = numberInput;
+    numberArray.push(numberInput);
+    document.querySelector('.numberChecked').textContent = numberArray;
 })
 
 // for(let i = 0; i <= 10; i++){
