@@ -7,8 +7,16 @@ function startGame () {
 
 console.log(startGame());
 
+/**
+ * Check input field
+ */
 
 
-for(let i = 0; i <= 10; i++){
-    console.log(i);
-}
+document.querySelector('.btn-ckeck').addEventListener('click', () => {
+    const numberInput = document.querySelector('#number').value;
+    document.querySelector('.numberChecked').innerHTML = numberInput;
+})
+
+// for(let i = 0; i <= 10; i++){
+//     console.log(i);
+// }
