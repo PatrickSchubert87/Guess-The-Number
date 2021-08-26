@@ -18,6 +18,17 @@ const randomNumber = random();
 // console.log(startGame());
 
 /**
+ * Game Over Function
+ */
+
+let gameOver = false;
+
+function gameOverFunction() {
+    alert('Game Over');
+    gameOver = true;
+}
+
+/**
  * Check input field
  */
 
@@ -26,25 +37,39 @@ const numberArray = [];
 let number = 0;
 let message = '';
 
+// Click function
 document.querySelector('.btn-ckeck').addEventListener('click', () => {
-    const numberInput = document.querySelector('#number').value;
-    number = Math.floor(numberInput);
-    numberArray.push(numberInput);
+        const numberInput = document.querySelector('#number').value;
+        number = Math.floor(numberInput);
+        numberArray.push(numberInput);
 
-    console.log(numberArray.length, number);
+        console.log(numberArray.length, number);
 
-    message = 
-    `
-    <tr class="row">
-    <td class="col numberIndex">#${numberArray.length}</td>
-    <td class="col numberChecked">${number}</td>
-    </tr>`;
+        message = 
+        `
+        <tr class="row">
+        <td class="col numberIndex">#${numberArray.length}</td>
+        <td class="col numberChecked">${number}</td>
+        </tr>`;
 
-    checkNumber();
+        // checkNumber();
 
-    document.querySelector('.output').insertAdjacentHTML("beforeend", message);
-});
+        document.querySelector('.output').insertAdjacentHTML("beforeend", message);
 
+
+        testGame();
+    });
+
+function testGame() {
+    if(gameOver === false) {
+        // btnCheckfunction();
+        checkNumber();
+    } else {
+        // alert('The Game is over');
+        // gameOver = true;
+        gameOverFunction();
+    }
+}
 /**
  * check whether it is the correct number.
  */
@@ -54,11 +79,7 @@ function checkNumber() {
         console.log('This is the wrong number, please try it agian');
     } else {
         console.log('Congratulations! This was the correct number');
-        gameOver();
+        gameOverFunction();
+        gameOver = true;
     }
-}
-
-function gameOver() {
-    alert('Game Over');
-
 }
