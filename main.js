@@ -37,6 +37,23 @@ const numberArray = [];
 let number = 0;
 let message = '';
 
+/**
+ * Message function
+ */
+function messageFuntion() {
+
+    const output = document.querySelector('.output');
+
+    message = 
+        `
+        <tr class="row">
+        <td class="col numberIndex">#${numberArray.length}</td>
+        <td class="col numberChecked">${number}</td>
+        </tr>`;
+
+    output.insertAdjacentHTML("beforeend", message);
+}
+
 // Click function
 document.querySelector('.btn-ckeck').addEventListener('click', () => {
         const numberInput = document.querySelector('#number').value;
@@ -45,16 +62,16 @@ document.querySelector('.btn-ckeck').addEventListener('click', () => {
 
         console.log(numberArray.length, number);
 
-        message = 
-        `
-        <tr class="row">
-        <td class="col numberIndex">#${numberArray.length}</td>
-        <td class="col numberChecked">${number}</td>
-        </tr>`;
+        // message = 
+        // `
+        // <tr class="row">
+        // <td class="col numberIndex">#${numberArray.length}</td>
+        // <td class="col numberChecked">${number}</td>
+        // </tr>`;
 
         // checkNumber();
 
-        document.querySelector('.output').insertAdjacentHTML("beforeend", message);
+        // document.querySelector('.output').insertAdjacentHTML("beforeend", message);
 
 
         testGame();
@@ -63,6 +80,7 @@ document.querySelector('.btn-ckeck').addEventListener('click', () => {
 function testGame() {
     if(gameOver === false) {
         // btnCheckfunction();
+        messageFuntion();
         checkNumber();
     } else {
         // alert('The Game is over');
