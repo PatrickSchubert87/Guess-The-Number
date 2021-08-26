@@ -26,6 +26,7 @@ let gameOver = false;
 function gameOverFunction() {
     alert('Game Over');
     gameOver = true;
+    restartBtn();
 }
 
 /**
@@ -52,6 +53,17 @@ function messageFuntion() {
         </tr>`;
 
     output.insertAdjacentHTML("beforeend", message);
+}
+
+/**
+ * Restart Button
+ */
+
+// const resetBtn = document.querySelector('.reset').style.display = 'block';
+function restartBtn() {
+    // const resetBtn = document.querySelector('.reset');
+    // resetBtn.style.display = 'block';
+    document.querySelector('.reset').style.display = 'block';
 }
 
 // Click function
@@ -86,6 +98,7 @@ function testGame() {
         // alert('The Game is over');
         // gameOver = true;
         gameOverFunction();
+        // restartBtn();
     }
 }
 /**
@@ -98,6 +111,7 @@ function checkNumber() {
     } else {
         console.log('Congratulations! This was the correct number');
         gameOverFunction();
-        gameOver = true;
+        gameOver = true;  //TODO erease
+        // document.querySelector('.reset').style.display = 'block';
     }
 }
