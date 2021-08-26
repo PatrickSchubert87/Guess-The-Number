@@ -51,8 +51,14 @@ document.querySelector('.btn-ckeck').addEventListener('click', () => {
 
 function checkNumber() {
     if(number !== randomNumber) {
-        console.log('This is the wrong number, please try agian');
+        console.log('This is the wrong number, please try it agian');
     } else {
-        console.log('Congratulations! This was the correct number.');
+        console.log('Congratulations! This was the correct number');
+        gameOver();
     }
+}
+
+function gameOver() {
+    alert('Game Over');
+
 }
