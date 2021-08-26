@@ -1,11 +1,21 @@
-function startGame () {
-    function random () {
+// const randomNumber = 0;
+// function startGame () {
+//     function random () {
+//         return Math.floor(Math.random() * 100);
+//     }
+//     randomNumber = random();
+//     return randomNumber;
+// }
+
+// function startGame () {
+    function random() {
         return Math.floor(Math.random() * 100);
     }
-    return random();
-}
-
-console.log(startGame());
+    // randomNumber = random();
+    // return randomNumber;
+// }
+const randomNumber = random();
+// console.log(startGame());
 
 /**
  * Check input field
@@ -18,7 +28,7 @@ let message = '';
 
 document.querySelector('.btn-ckeck').addEventListener('click', () => {
     const numberInput = document.querySelector('#number').value;
-    number = numberInput;
+    number = Math.floor(numberInput);
     numberArray.push(numberInput);
 
     console.log(numberArray.length, number);
@@ -30,10 +40,19 @@ document.querySelector('.btn-ckeck').addEventListener('click', () => {
     <td class="col numberChecked">${number}</td>
     </tr>`;
 
-    document.querySelector('.output').insertAdjacentHTML("beforeend", message);
-    // document.querySelector('.output').appendChild(message);
-})
+    checkNumber();
 
-// for(let i = 0; i <= 10; i++){
-//     console.log(i);
-// }
+    document.querySelector('.output').insertAdjacentHTML("beforeend", message);
+});
+
+/**
+ * check whether it is the correct number.
+ */
+
+function checkNumber() {
+    if(number !== randomNumber) {
+        console.log('This is the wrong number, please try agian');
+    } else {
+        console.log('Congratulations! This was the correct number.');
+    }
+}
