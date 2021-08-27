@@ -55,17 +55,6 @@ function messageFuntion() {
     output.insertAdjacentHTML("beforeend", message);
 }
 
-/**
- * Restart Button
- */
-
-// const resetBtn = document.querySelector('.reset').style.display = 'block';
-function restartBtn() {
-    // const resetBtn = document.querySelector('.reset');
-    // resetBtn.style.display = 'block';
-    document.querySelector('.reset').style.display = 'block';
-}
-
 // Click function
 document.querySelector('.btn-ckeck').addEventListener('click', () => {
         const numberInput = document.querySelector('#number').value;
@@ -114,4 +103,22 @@ function checkNumber() {
         gameOver = true;  //TODO erease
         // document.querySelector('.reset').style.display = 'block';
     }
+}
+
+/**
+ * Restart function and Restart Button
+ */
+
+ function restart() {
+    document.location.reload();
+}
+
+// Restart Button
+function restartBtn() {
+    const resetBtn = document.querySelector('.reset');
+    // resetBtn.style.display = 'block';
+    resetBtn.style.display = 'block';
+    resetBtn.addEventListener('click', () => {
+        restart()
+    })
 }
