@@ -24,21 +24,7 @@ function gameOverFunction() {
 const numberArray = [];
 let number = 0;
 let message = '';
-
-/**
- * Message function
- */
-function messageFuntion() {
-  const output = document.querySelector('.output');
-
-  message = `
-        <tr class="row">
-        <td class="col numberIndex">#${numberArray.length}</td>
-        <td class="col numberChecked">${number}</td>
-        </tr>`;
-
-  output.insertAdjacentHTML('beforeend', message);
-}
+let htmlTag = '';
 
 // Click function
 document.querySelector('.btn-ckeck').addEventListener('click', () => {
@@ -52,7 +38,7 @@ document.querySelector('.btn-ckeck').addEventListener('click', () => {
 });
 
 function testGame() {
-  if (gameOver === false) {
+  if (gameOver === false && numberArray.length <= 10) {
     messageFuntion();
     checkNumber();
   } else {
@@ -64,14 +50,28 @@ function testGame() {
  * check whether it is the correct number.
  */
 
-function checkNumber() {
-  if (number !== randomNumber) {
-    console.log('This is the wrong number, please try it agian');
-  } else {
-    console.log('Congratulations! This was the correct number');
-    gameOverFunction();
+
+ function checkNumber() {
+    if (number === randomNumber) {
+        console.log('Congratulations! This was the correct number');
+        gameOverFunction();
+      // console.log('This is the wrong number, please try it agian');
+      
+    } else {
+        if(number < randomNumber) {
+            message = 'The number is too low, please enter a new number';
+            document.querySelector('.message').textContent = message;
+            // message = `<span class="text-success">The number is too low, please enter a new number.</span>`;
+            console.log(`The number is too low, please enter a new number`);
+        }
+        if(number > randomNumber) {
+            // message = `<span class="text-error">The number is too heigh, please enter a new number.</span>`;   
+            message = 'The number is too heigh, please enter a new number';
+            document.querySelector('.message').textContent = message;
+            console.log(`The number is too heigh, please enter a new number`);
+        }
+    }
   }
-}
 
 /**
  * Restart function and Restart Button
@@ -89,3 +89,19 @@ function restartBtn() {
     restart();
   });
 }
+
+/**
+ * Message function
+ */
+ function messageFuntion() {
+    const output = document.querySelector('.output');
+  
+    htmlTag = `
+          <tr class="row">
+          <td class="col numberIndex">#${numberArray.length}</td>
+          <td class="col numberChecked">${number}</td>
+          <td class="col message">${message}</td>
+          </tr>`;
+  
+    output.insertAdjacentHTML('beforeend', htmlTag);
+  }
