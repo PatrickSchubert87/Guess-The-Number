@@ -39,7 +39,7 @@ document.querySelector('.btn-ckeck').addEventListener('click', () => {
 
 function testGame() {
   if (gameOver === false && numberArray.length <= 10) {
-    messageFuntion();
+    // messageFuntion();
     checkNumber();
   } else {
     gameOverFunction();
@@ -60,14 +60,16 @@ function testGame() {
     } else {
         if(number < randomNumber) {
             message = 'The number is too low, please enter a new number';
-            document.querySelector('.message').textContent = message;
+            // document.querySelector('.message').textContent = message;
+            messageFuntion();
             // message = `<span class="text-success">The number is too low, please enter a new number.</span>`;
             console.log(`The number is too low, please enter a new number`);
         }
         if(number > randomNumber) {
             // message = `<span class="text-error">The number is too heigh, please enter a new number.</span>`;   
             message = 'The number is too heigh, please enter a new number';
-            document.querySelector('.message').textContent = message;
+            // document.querySelector('.message').textContent = message;
+            messageFuntion();
             console.log(`The number is too heigh, please enter a new number`);
         }
     }
