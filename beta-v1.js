@@ -1,12 +1,3 @@
-/**
- * Global Variablaes
- */
-// create empty array for numbers
-const numberArray = [];
-let number = 0;
-let message = '';
-let htmlTag = '';
-
 function random() {
   return Math.floor(Math.random() * 100);
 }
@@ -16,6 +7,7 @@ const randomNumber = random();
 /**
  * Game Over Function
  */
+
 let gameOver = false;
 
 function gameOverFunction() {
@@ -23,6 +15,16 @@ function gameOverFunction() {
   gameOver = true;
   restartBtn();
 }
+
+/**
+ * Check input field
+ */
+
+// create empty array for numbers
+const numberArray = [];
+let number = 0;
+let message = '';
+let htmlTag = '';
 
 // Click function
 document.querySelector('.btn-ckeck').addEventListener('click', () => {
@@ -47,6 +49,8 @@ function testGame() {
 /**
  * check whether it is the correct number.
  */
+
+
  function checkNumber() {
     if (number === randomNumber) {
         console.log('Congratulations! This was the correct number');
@@ -57,7 +61,7 @@ function testGame() {
         if(number < randomNumber) {
             message = 'The number is too low, please enter a new number';
             // document.querySelector('.message').textContent = message;
-            createHtmlOutput();
+            messageFuntion();
             // message = `<span class="text-success">The number is too low, please enter a new number.</span>`;
             console.log(`The number is too low, please enter a new number`);
         }
@@ -65,7 +69,7 @@ function testGame() {
             // message = `<span class="text-error">The number is too heigh, please enter a new number.</span>`;   
             message = 'The number is too heigh, please enter a new number';
             // document.querySelector('.message').textContent = message;
-            createHtmlOutput();
+            messageFuntion();
             console.log(`The number is too heigh, please enter a new number`);
         }
     }
@@ -74,6 +78,7 @@ function testGame() {
 /**
  * Restart function and Restart Button
  */
+
 function restart() {
   document.location.reload();
 }
@@ -90,15 +95,15 @@ function restartBtn() {
 /**
  * Message function
  */
-function createHtmlOutput() {
+ function messageFuntion() {
     const output = document.querySelector('.output');
   
     htmlTag = `
           <tr class="row">
-          <td class="col numberIndex"># ${numberArray.length}</td>
+          <td class="col numberIndex">#${numberArray.length}</td>
           <td class="col numberChecked">${number}</td>
           <td class="col message">${message}</td>
           </tr>`;
   
     output.insertAdjacentHTML('beforeend', htmlTag);
-}
+  }
