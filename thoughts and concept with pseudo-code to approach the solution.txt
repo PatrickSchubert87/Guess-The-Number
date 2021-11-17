@@ -1,0 +1,79 @@
+First approach Guess The Number Game
+
+1. - random Number 1 - 100
+
+2. - try 10 times to guess number
+
+3. - show conditional statement whether guessed number was right or wrong
+	- if number was wrong show whether the number was to high or to low
+
+4. - show preview guesses
+
+5. - Game Over - if correct number or run out of turns
+	- show restart button
+		- restart the game by reloading the page
+
+
+Narrow down Guess The Number Game approach by using pseudo code
+
+1. /** Create random function */
+	function randomNumber {
+		return random = Math.floor(Math.round() 1 - 100)
+	}
+	/** Maybe capture number in variable */
+	const number = randomNumber();
+
+2. /** get inserted number from input field */
+	var inputNumber = document.querySelector(‘.inputNumberField’);
+	var numberFromInput = Number(inputNumber);
+
+3. /** Click Event on button */
+	document.querySelector(‘.btn’).addEventListener(‘click’, () => {
+	CheckGuess
+	});
+
+4. /** Check in a function - if inserted number is correct or not */
+	function checkNumber() {
+		if(numberFromInput !== number) {
+			print(“The Number was not correct, please try it again”);
+			if(numberFromInput > number){
+				print(“The number you entered is too high”);}
+			else if(numberFromInput < number){
+				print(“The number you entered is too low”);}
+		} else {
+			print(“Congratualations”);
+			show button - restart game;
+		}
+	}
+
+5. /** Check the try outs - works with multiple approaches*/
+
+function checkGuesses() {
+
+	5.1. /** Approach with variable count */
+		let count = 1;
+
+		if(count < 10){
+			count++;
+			checkNumber();
+		} else {
+			print(“Game Over”);
+			show button + restartGame();
+		}
+
+	5.2 /** Approach with empty array */
+		const count = [];
+
+		if(count.length < 10){
+			count.push(numberFromInput);
+			checkNumber();
+		} else {
+			print(“Game Over”);
+			show button + restartGame();
+		}
+	}
+
+6. /** restarting the game - I use the easiest approach but not the best by reloading the page*/
+	function restartGame() {
+	reload page
+	}
