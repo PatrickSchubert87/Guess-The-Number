@@ -11,9 +11,15 @@ const randomNumber = random();
 let gameOver = false;
 
 function gameOverFunction() {
-  alert('Game Over');
-  gameOver = true;
-  restartBtn();
+  if (numberArray.length <= 10) {
+    alert('Congratulation, you won!');
+    gameOver = true;
+    restartBtn();
+  } else {
+    alert('Game Over, you lost!');
+    gameOver = true;
+    restartBtn();
+  }
 }
 
 /**
