@@ -11,7 +11,7 @@ const randomNumber = random();
 let gameOver = false;
 
 function gameOverFunction() {
-  if (numberArray.length <= 10) {
+  if (numberArray.length < 10) {
     alert('Congratulation, you won!');
     gameOver = true;
     restartBtn();
@@ -44,7 +44,7 @@ document.querySelector('.btn-ckeck').addEventListener('click', () => {
 });
 
 function testGame() {
-  if (gameOver === false && numberArray.length <= 10) {
+  if (gameOver === false && numberArray.length < 10) {
     // messageFuntion();
     checkNumber();
   } else {
