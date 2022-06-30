@@ -1,4 +1,5 @@
-function random() {
+(function () {
+  function random() {
   return Math.floor(Math.random() * 100);
 }
 
@@ -113,3 +114,4 @@ function restartBtn() {
   
     output.insertAdjacentHTML('beforeend', htmlTag);
   }
+})();
