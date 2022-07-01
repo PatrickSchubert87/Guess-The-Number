@@ -23,40 +23,11 @@ let htmlTag = '';
 
 let gameOver = false;
 
-// function gameOverFunction() {
-//   if (numberArray.length < 10) {
-//     alert('Congratulation, you won!');
-//     gameOver = true;
-//     restartBtn();
-//   } else {
-//     alert('Game Over, you lost!');
-//     gameOver = true;
-//     restartBtn();
-//   }
-// }
+const button = document.querySelector('.btn-ckeck');
 
-// function testGameOver() {
-//   if (gameOver === false && numberArray.length < 10) {
-//     //   checkNumber();
-//     game();
-//   } else {
-//     gameOverFunction();
-//   }
-// }
-/**
- * Click function
- */
-
-// (function click() {
-//     (function() {
-        
-        const button = document.querySelector('.btn-ckeck');
-        
-        button.addEventListener('click', () => {
-          game();
-        });
-//     })();
-// })();
+button.addEventListener('click', () => {
+  game();
+});
 
 /**
  * Game function
@@ -64,9 +35,11 @@ let gameOver = false;
 
 function game() {
   testNumberValue();
-  //   testGameOver();
-  // checkNumber();
 }
+
+/**
+ * Test Number Value
+ */
 
 function testNumberValue() {
   number = document.querySelector('#number').value;
@@ -79,123 +52,67 @@ function testNumberValue() {
         `100 ist the highest number you can use. \n Your number was ${number}`
       );
     } else {
-        array();
+      array();
     }
-    
     return number;
-    // else {
-      /**
-       * Number array
-       */
+  }
+}
 
-    //   if (numberArray.length == []) {
-    //     console.log('The array is empty');
-    //     console.log(numberArray);
-    //     numberArray.push(number);
-    //     console.log(numberArray);
-    //   } else {
-    //     if (numberArray.includes(number)) {
-    //       alert(`The ${number} was already used \n Try another one`);
-    //       console.log(numberArray);
-    //     } else {
-    //     //   numberArray.push(number);
-    //     //   console.log(numberArray);
-    //       //   testGameOver();
-    //         checkNumber();
-    //       //   return numberArray;
-    //     }
-
-      }
-    }
-//   }
-//   checkNumber();
-    // return number;
-// }
+/**
+ * Push and test numberArray
+ * @returns numberArray
+ */
 
 function array() {
-    // create empty array for numbers
-// let numberArray = [];
-    // number = number;
-    // numberArray = numberArray;
-    console.log(number, numberArray, numberArray.length);
-    // alert(`Function array shows the number ${number} \n and the numberArray ${numberArray} and length ${numberArray.length}`);
-    
-    if (numberArray.length == []) {
-        // console.log('The array is empty');
-        // console.log(numberArray);
-        numberArray.push(number);
-        // console.log(numberArray);
-        // game();
-        checkNumber();
-        return numberArray;
-    } 
-    else if (numberArray.includes(number)) {
-            alert(`The ${number} was already used \n Try another one`);
-            console.log(numberArray);
-            // game();
-            return numberArray;
-            // return click();
-        } 
-        // else if (numberArray.length == []) {
-        //         console.log('The array is empty');
-        //         console.log(numberArray);
-        //         numberArray.push(number);
-        //         console.log(numberArray);
-        //         // game();
-        //         checkNumber();
-        //         return numberArray = number;
-        //     } 
-            
-            else {
+  console.log(number, numberArray, numberArray.length);
 
-                numberArray.push(number);
+  if (numberArray.length == []) {
+    numberArray.push(number);
+    checkNumber();
+    return numberArray;
+  } else if (numberArray.includes(number)) {
+    alert(`The number ${number} was already used \n Try another one`);
+    console.log(numberArray);
+    return numberArray;
+  } else {
+    numberArray.push(number);
 
-                /**
- * Game Over Function Lost
- */
-                if (numberArray.length > 10) {
-                    alert(`Game Over, you lost! \n The correct number was ${number}`);
-    gameOver = true;
-    restartBtn();
-                }
-              //   console.log(numberArray);
-              //   testGameOver();
-              checkNumber();
-                return numberArray;
-            }
-        // }
-        
-        // alert(`Function array shows the number ${number} \n and the numberArray ${numberArray} and length ${numberArray.length}`);
-    // }
-    // return numberArray;
+    /**
+     * Game Over = Lost
+     */
+    if (numberArray.length > 9) {
+      alert(`Game Over, you lost! \n The correct number was ${randomNumber}`);
+      gameOver = true;
+      restartBtn();
+    }
+    checkNumber();
+    return numberArray;
+  }
 }
 function checkNumber() {
-    // number = testNumberValue(number);
-
-    if (number === randomNumber) {
-        console.log('Congratulations! This was the correct number');
-        alert('Congratulation, you won!');
+  /**
+   * Test Game Over = Win
+   */
+  if (number === randomNumber) {
+    // console.log(`Congratulations! ${number} was the correct number`);
+    alert(`Congratulation, you won! \n ${number} was the correct number`);
     gameOver = true;
     restartBtn();
-        // gameOverFunction();
-    } else {
-        if(number < randomNumber) {
-            // numberArray.push(number);
-            // console.log(numberArray);
-            message = 'The number is too low, please enter a new number';
-            messageFuntion();
-            console.log(`The number is too low, please enter a new number`);
-        }
-        if(number > randomNumber) {
-            // numberArray.push(number);
-            // console.log(numberArray);
-            message = 'The number is too heigh, please enter a new number';
-            messageFuntion();
-            console.log(`The number is too heigh, please enter a new number`);
-        }
+  } else {
+    // Check Number
+    if (number < randomNumber) {
+      message = 'The number is too low, please enter a new number';
+      messageFuntion();
+      console.log(`The number is too low, please enter a new number`);
     }
-    return true;
+    if (number > randomNumber) {
+      message = 'The number is too heigh, please enter a new number';
+      messageFuntion();
+      console.log(`The number is too heigh, please enter a new number`);
+    }
   }
+  return true;
+}
 
 /**
  * Restart function and Restart Button
@@ -218,7 +135,7 @@ function restartBtn() {
  * Message function
  */
 function messageFuntion() {
-    // numberArray = array(numberArray);
+  // numberArray = array(numberArray);
   const output = document.querySelector('.output');
 
   htmlTag = `
