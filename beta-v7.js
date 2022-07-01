@@ -25,15 +25,8 @@ let htmlTag = '';
 
 const button = document.querySelector('.btn-ckeck');
 
-// console.log(number);
-// });
-
 button.addEventListener('click', () => {
-  //    button.textContent = `Click count: ${event.detail}`;
-  // console.log(`Click count: ${event.detail}`);
   game();
-
-  // return number;
 });
 
 function game() {
@@ -52,8 +45,6 @@ function testGame(number) {
         `100 ist the highest number you can use. \n You number was ${number}`
       );
     } else {
-      // testArray();
-    //   return number;
 
      /**
    * Number array
@@ -76,48 +67,4 @@ function testGame(number) {
       }
     }
   }
-  // return number;
-  
 }
-
-// function testArray() {
-//   // testNumber();
-//   console.log(testNumber(number));
-//   console.log(numberArray);
-//   if (numberArray.length == []) {
-//     numberArray.push(testNumber(number));
-//     console.log(numberArray);
-//     testNumber(number);
-//   } else {
-//     for (let i = 0; i < numberArray.length; i++) {
-//       if (testNumber(number) === numberArray[i]) {
-//         // numberArray.push(number);
-//         // alert(`already in`);
-//         console.log(numberArray);
-//         testNumber();
-//         // number = document.querySelector('#number').value;
-//         // return false;
-//         // button.addEventListener('click', () => {
-//         // testNumber();
-//         // })
-//         // game();
-//       }
-//     }
-//     // else if(number != numberArray){
-//     //     numberArray.push(number);
-//     //     console.log(numberArray);
-//     //     return true;
-//     // } else {
-//     //     console.log(numberArray);
-//     //     return numberArray;
-//     //     // return false;
-//     // }
-//   }
-
-//   // if(numberArray === [])
-//   // numberArray.push(number);
-//   // console.log(numberArray);
-//   // if (numberArray > 1 && number == numberArray) {
-//   //     alert(`already in`);
-//   // }
-// }
