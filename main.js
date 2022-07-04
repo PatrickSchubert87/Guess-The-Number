@@ -94,7 +94,7 @@ function checkNumber() {
    * Test Game Over = Win
    */
   if (number === randomNumber) {
-    // console.log(`Congratulations! ${number} was the correct number`);
+    
     alert(`Congratulation, you won! \n ${number} was the correct number`);
     gameOver = true;
     restartBtn();
@@ -135,7 +135,7 @@ function restartBtn() {
  * Message function
  */
 function messageFuntion() {
-  // numberArray = array(numberArray);
+ 
   const output = document.querySelector('.output');
 
   htmlTag = `
